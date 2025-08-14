@@ -1,0 +1,28 @@
+============================================================
+Testing UnbreakableCode with Fallback System
+============================================================
+
+Traceback (most recent call last):
+  File "C:\Users\Talon\UnbreakableCode\unbreakable\__init__.py", line 34, in _initialize
+    print(f"\u2705 UnbreakableCode connected to fixitAPI.dev")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Talon\UnbreakableCode\test_simple.py", line 13, in <module>
+    from unbreakable import self_healing
+  File "C:\Users\Talon\UnbreakableCode\unbreakable\__init__.py", line 42, in <module>
+    _initialize()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Talon\UnbreakableCode\unbreakable\__init__.py", line 39, in _initialize
+    print("\u26a0\ufe0f UnbreakableCode in offline mode (basic protection active)")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 0-1: character maps to <undefined>
