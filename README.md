@@ -2,6 +2,19 @@
 
 **Makes Python literally uncrashable.**
 
+## The Money Shot
+
+```python
+from unbreakablecode import self_healing
+
+# THIS SHOULD CRASH PYTHON
+@self_healing
+def chaos():
+    return 1/0 + [][999] + None.lol + int("not a number")
+
+print(chaos())  # Returns None. Refuses to elaborate. Leaves.
+```
+
 ## The Origin Story
 I got tired of writing try/except blocks everywhere. So I made a decorator that catches EVERYTHING.
 
@@ -10,7 +23,7 @@ I got tired of writing try/except blocks everywhere. So I made a decorator that 
 pip install unbreakablecode
 ```
 
-## Usage
+## Basic Usage
 ```python
 from unbreakablecode import self_healing
 
@@ -31,8 +44,19 @@ result = dangerous_function()  # Returns None instead of exploding
 ## The Ironic Bug
 Version 2.0.0 crashed on import due to Unicode errors. The "unbreakable" package broke itself. Version 2.0.1 fixes this.
 
-## Warning
-This should absolutely not be used in production. You will use it in production anyway.
+## ⚠️ PRODUCTION WARNING ⚠️
+
+**DO NOT USE THIS IN:**
+- Banking systems
+- Healthcare applications  
+- Aircraft control systems
+- Nuclear power plants
+- Life support systems
+- Anything where failure = people die
+
+**WHY?** Because hiding errors instead of fixing them is like putting duct tape over your check engine light. Technically it works. Morally questionable.
+
+**BUT** if you're building a weekend project or "learning" application, go wild. It's actually pretty useful for rapid prototyping.
 
 ## Stats
 - Built in 30 days while learning Python
